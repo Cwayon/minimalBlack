@@ -511,3 +511,28 @@ body.wt-global [type="search"]::placeholder {
     border: 1px solid #333 !important;
     pointer-events: auto !important;
 }
+
+/* 37. Tom Select dropdown active item styling */
+[dir] .ts-dropdown .active {
+    background-color: #222 !important;
+    color: #5dade2 !important;
+    pointer-events: auto !important;
+}
+
+/* 38. On-screen keyboard styling */
+[dir] .wt-osk-keys {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+[dir] .wt-osk-key {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid #444 !important;
+    pointer-events: auto !important;
+}
+[dir] .wt-osk-key:hover {
+    background-color: #444 !important;
+    color: #fff !important;
+}
