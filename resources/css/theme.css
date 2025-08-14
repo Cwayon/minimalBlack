@@ -765,3 +765,8 @@ body.wt-global input[type="file"]::file-selector-button {
 body.wt-global .form-text {
     color: #bbb !important;
 }
+
+.dropdown-input {
+    /* Other styles */
+    color: #bbb; /* Dark gray text */
+}
