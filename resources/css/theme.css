@@ -289,6 +289,7 @@ body.wt-global .btn-primary:focus {
     --dt-html-background: #111;
     --bs-accordion-bg: #111;
     --bs-nav-tabs-link-active-bg: #222;
+    --bs-modal-bg: #111;
     --bs-pagination-bg: #111;
     --bs-pagination-color: #eee;
     --bs-pagination-hover-color: #fff;
@@ -300,6 +301,19 @@ body.wt-global .btn-primary:focus {
     --bs-pagination-active-border-color: #3498db;
     --bs-pagination-disabled-color: #666;
     --bs-pagination-disabled-bg: #111;
+    --bs-list-group-color: #eee;
+    --bs-list-group-bg: #111;
+    --bs-list-group-border-color: #333;
+    --bs-list-group-action-color: #3498db;
+    --bs-list-group-action-hover-color: #fff;
+    --bs-list-group-action-hover-bg: #222;
+    --bs-list-group-action-active-color: #fff;
+    --bs-list-group-action-active-bg: #3498db;
+    --bs-list-group-disabled-color: #666;
+    --bs-list-group-disabled-bg: #111;
+    --bs-list-group-active-color: #fff;
+    --bs-list-group-active-bg: #3498db;
+    --bs-list-group-active-border-color: #3498db;
 }
 
 /* 25. Additional form controls and Tom Select elements */
@@ -535,4 +549,219 @@ body.wt-global [type="search"]::placeholder {
 [dir] .wt-osk-key:hover {
     background-color: #444 !important;
     color: #fff !important;
+}
+
+/* 39. OpenStreetMap dark mode styling */
+body.wt-global .wt-map.leaflet-container {
+    background-color: #111 !important;
+    filter: invert(0.85) hue-rotate(200deg) brightness(1.15) contrast(0.95)
+        saturate(1.1) sepia(0.15) !important;
+}
+body.wt-global .wt-map.leaflet-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        rgba(52, 152, 219, 0.08),
+        rgba(17, 17, 17, 0.05)
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Keep map controls readable */
+body.wt-global .wt-map .leaflet-control {
+    filter: invert(1) hue-rotate(180deg) !important;
+    background-color: #222 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+}
+
+/* 40. Bootstrap list group styling */
+body.wt-global .list-group {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .list-group-item {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .list-group-item-action {
+    color: #3498db !important;
+}
+body.wt-global .list-group-item-action:hover {
+    background-color: #222 !important;
+    color: #fff !important;
+}
+body.wt-global .list-group-item-action:active {
+    background-color: #3498db !important;
+    color: #fff !important;
+}
+body.wt-global .list-group-item.active {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border-color: #3498db !important;
+}
+body.wt-global .list-group-item.disabled {
+    background-color: #111 !important;
+    color: #666 !important;
+}
+
+/* 41. Google Charts dark mode styling */
+body.wt-global [id*="google-chart"] {
+    background-color: #111 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+body.wt-global [id*="google-chart"] text {
+    fill: #eee !important;
+    color: #eee !important;
+}
+body.wt-global [id*="google-chart"] .google-visualization-table-table {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+}
+body.wt-global [id*="google-chart"] svg {
+    background-color: #111 !important;
+}
+body.wt-global [id*="google-chart"] rect[fill="#ffffff"] {
+    fill: #111 !important;
+}
+body.wt-global [id*="google-chart"] rect[fill="white"] {
+    fill: #111 !important;
+}
+body.wt-global [id*="google-chart"] path {
+    stroke: #eee !important;
+}
+
+/* 42. Genealogy person styling */
+[dir] .person0 {
+    background-color: #2c3e50 !important;
+    color: #fff !important;
+    border: 2px solid #3498db !important;
+    pointer-events: auto !important;
+}
+[dir] .person1 {
+    background-color: #34495e !important;
+    color: #ecf0f1 !important;
+    border: 1px solid #5dade2 !important;
+    pointer-events: auto !important;
+}
+[dir] .person2 {
+    background-color: #1a252f !important;
+    color: #bdc3c7 !important;
+    border: 1px solid #4a6741 !important;
+    pointer-events: auto !important;
+}
+[dir] .person3 {
+    background-color: #2e4057 !important;
+    color: #95a5a6 !important;
+    border: 1px solid #7f8c8d !important;
+    pointer-events: auto !important;
+}
+[dir] .person4 {
+    background-color: #1e2a38 !important;
+    color: #85929e !important;
+    border: 1px solid #566573 !important;
+    pointer-events: auto !important;
+}
+[dir] .person5 {
+    background-color: #17212b !important;
+    color: #7b7d7d !important;
+    border: 1px solid #424949 !important;
+    pointer-events: auto !important;
+}
+
+/* 43. Specific Google Chart styling */
+#google-chart-0c2c2486b839fd2b {
+    background-color: #111 !important;
+    color: #eee !important;
+}
+#google-chart-0c2c2486b839fd2b .google-visualization-tooltip {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+    border-radius: 4px !important;
+    padding: 0.5rem !important;
+    z-index: 99999 !important;
+}
+#google-chart-0c2c2486b839fd2b .google-visualization-tooltip * {
+    color: #fff !important;
+}
+
+/* 44. Modal styling */
+body.wt-global .modal {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+body.wt-global .modal-content,
+body.wt-global .wt-modal-form {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    border-radius: 4px !important;
+}
+body.wt-global .modal-header,
+body.wt-global .wt-modal-form .modal-header {
+    background-color: #222 !important;
+    color: #eee !important;
+    border-bottom: 1px solid #333 !important;
+}
+body.wt-global .modal-body,
+body.wt-global .wt-modal-form .modal-body {
+    background-color: #111 !important;
+    color: #eee !important;
+}
+body.wt-global .modal-footer,
+body.wt-global .wt-modal-form .modal-footer {
+    background-color: #222 !important;
+    color: #eee !important;
+    border-top: 1px solid #333 !important;
+}
+
+/* 45. Text muted styling */
+body.wt-global .text-muted {
+    color: #999 !important;
+}
+
+/* 46. File input styling */
+[dir] input[type="file"],
+body.wt-global input[type="file"],
+[dir] #file,
+body.wt-global #file {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid #444 !important;
+    border-radius: 4px !important;
+    padding: 0.375rem 0.75rem !important;
+    pointer-events: auto !important;
+}
+[dir] input[type="file"]::-webkit-file-upload-button,
+body.wt-global input[type="file"]::-webkit-file-upload-button {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding: 0.25rem 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+[dir] input[type="file"]::file-selector-button,
+body.wt-global input[type="file"]::file-selector-button {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 3px !important;
+    padding: 0.25rem 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+/* 47. Form text styling */
+body.wt-global .form-text {
+    color: #bbb !important;
 }
