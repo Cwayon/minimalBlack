@@ -1,3 +1,513 @@
+/* ============================== */
+/* minimalOled Theme for webtrees 2.1 */
+/* Black background, inverted text & greys, blue accents kept */
+/* ============================== */
+
+/* 0. Base page */
 body.wt-global {
-    color: orange;
+    background-color: #000 !important;
+    color: #eee !important;
+}
+
+/* 1. Sidebar & tree container */
+body.wt-global .wt-treeview,
+body.wt-global .wt-treeview-container {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+
+/* 2. Tree nodes (text, links) */
+body.wt-global .wt-treeview a,
+body.wt-global .wt-treeview .wt-tree-node {
+    color: #3498db !important;
+    pointer-events: auto !important;
+}
+body.wt-global .wt-treeview a:hover {
+    color: #5dade2 !important;
+    text-decoration: underline;
+}
+
+/* 3. Expand/collapse toggles */
+body.wt-global .wt-tree-toggle {
+    color: #ddd !important;
+}
+body.wt-global .wt-tree-toggle:hover {
+    color: #fff !important;
+}
+
+/* 4. Lines/connectors */
+body.wt-global .wt-treeview .wt-tree-line {
+    stroke: #444 !important;
+    border-color: #444 !important;
+}
+
+/* 5. Selected/highlighted node */
+body.wt-global .wt-treeview .wt-tree-node.active,
+body.wt-global .wt-treeview .wt-selected {
+    background-color: #222 !important;
+    color: #fff !important;
+    pointer-events: auto !important;
+}
+
+/* 6. Breadcrumb trail */
+body.wt-global .wt-breadcrumb,
+body.wt-global .breadcrumb {
+    background-color: #111 !important;
+    border-radius: 0 !important;
+}
+body.wt-global .breadcrumb a {
+    color: #3498db !important;
+}
+body.wt-global .breadcrumb .active {
+    color: #eee !important;
+}
+
+/* 7. Control toolbar above tree */
+body.wt-global .wt-tree-toolbar,
+body.wt-global .btn-toolbar {
+    background-color: #111 !important;
+    border-bottom: 1px solid #333 !important;
+}
+body.wt-global .wt-tree-toolbar .btn,
+body.wt-global .btn-toolbar .btn {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid #444 !important;
+}
+body.wt-global .wt-tree-toolbar .btn:hover,
+body.wt-global .btn-toolbar .btn:hover {
+    background-color: #444 !important;
+}
+
+/* 8. Search/filter input box */
+body.wt-global .wt-tree-filter input,
+body.wt-global .wt-filter-box input,
+body.wt-global .form-control.wt-header-search-field {
+    background-color: #222 !important;
+    border: 1px solid #444 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+body.wt-global .wt-tree-filter input:focus,
+body.wt-global .wt-filter-box input:focus,
+body.wt-global .form-control.wt-header-search-field:focus {
+    border-color: #5dade2 !important;
+    outline: none !important;
+}
+
+/* 9. Tooltips, labels and notes */
+body.wt-global .wt-tooltip,
+body.wt-global .tooltip-inner {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+
+/* 10. Vertical scrollbars in treeview */
+body.wt-global .wt-treeview-container::-webkit-scrollbar {
+    width: 8px;
+}
+body.wt-global .wt-treeview-container::-webkit-scrollbar-track {
+    background: #111;
+}
+body.wt-global .wt-treeview-container::-webkit-scrollbar-thumb {
+    background: #333;
+}
+body.wt-global .wt-treeview-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 11. Cards (blocks) */
+body.wt-global .card,
+body.wt-global .wt-block {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    border-radius: 4px !important;
+    margin-bottom: 1rem !important;
+    pointer-events: auto !important;
+}
+
+/* 12. Specific gedcom_stats card */
+body.wt-global .card.mb-4.wt-block.wt-block-gedcom_stats {
+    background-color: #111 !important;
+    border: 1px solid #444 !important;
+    color: #eee !important;
+}
+
+/* 13. Card headers */
+body.wt-global .card-header,
+body.wt-global .wt-block-header,
+body.wt-global .wt-block-header-gedcom_stats {
+    background-color: #222 !important;
+    border-bottom: 1px solid #444 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+
+/* 14. Tables inside cards or blocks */
+body.wt-global table {
+    background-color: #111 !important;
+    border-collapse: collapse !important;
+    color: #eee !important;
+    width: 100% !important;
+    pointer-events: auto !important;
+}
+body.wt-global table th,
+body.wt-global table td {
+    border: 1px solid #333 !important;
+    padding: 0.5rem !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+body.wt-global table th {
+    background-color: #222 !important;
+}
+body.wt-global table tbody tr:nth-child(even) {
+    background-color: #1a1a1a !important;
+}
+body.wt-global table tbody tr:nth-child(odd) {
+    background-color: #111 !important;
+}
+body.wt-global table tr:hover {
+    background-color: #222 !important;
+}
+
+/* 14b. Deep table cells */
+body.wt-global .table > :not(caption) > * > * {
+    background-color: #111 !important;
+    color: #eee !important;
+    border-color: #333 !important;
+    pointer-events: auto !important;
+}
+
+/* 15. Buttons inside cards/tables */
+body.wt-global .card .btn,
+body.wt-global .wt-block .btn {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid #444 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .card .btn:hover,
+body.wt-global .wt-block .btn:hover {
+    background-color: #444 !important;
+}
+
+/* 16. Links inside cards/tables */
+body.wt-global .card a,
+body.wt-global .wt-block a {
+    color: #3498db !important;
+}
+body.wt-global .card a:hover,
+body.wt-global .wt-block a:hover {
+    color: #5dade2 !important;
+    text-decoration: underline;
+}
+
+/* 17. Dropdown menus */
+body.wt-global .dropdown-menu {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+body.wt-global .dropdown-menu a {
+    color: #3498db !important;
+}
+body.wt-global .dropdown-menu a:hover {
+    color: #5dade2 !important;
+    background-color: #222 !important;
+}
+
+/* 18. Links & link-buttons */
+body.wt-global .btn-link,
+body.wt-global .nav-link,
+body.wt-global a {
+    color: #3498db !important;
+    text-decoration: none !important;
+    pointer-events: auto !important;
+}
+body.wt-global .btn-link:hover,
+body.wt-global .nav-link:hover,
+body.wt-global a:hover {
+    color: #5dade2 !important;
+    text-decoration: underline !important;
+}
+
+/* 19. Tom Select / select dropdowns */
+body.wt-global .ts-wrapper,
+body.wt-global
+    .form-select.tom-select.single.plugin-dropdown_input.plugin-virtual_scroll.required.full.has-items,
+body.wt-global .ts-control,
+body.wt-global .ts-control input,
+body.wt-global .ts-dropdown {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .ts-wrapper .ts-dropdown .ts-option:hover {
+    background-color: #222 !important;
+    color: #5dade2 !important;
+}
+
+/* 20. Chart boxes */
+body.wt-global [dir] .wt-chart-box-m,
+body.wt-global [dir] .wt-chart-box-m .wt-chart-box-dropdown {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+
+/* 21. Primary buttons (matching blues) */
+body.wt-global .btn-primary {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border: 1px solid #3498db !important;
+}
+body.wt-global .btn-primary:hover,
+body.wt-global .btn-primary:focus {
+    background-color: #5dade2 !important;
+    border-color: #5dade2 !important;
+    color: #fff !important;
+}
+/* 22. Sex / gender variables */
+:root {
+    --sex-m-bg: #000; /* male background */
+    --sex-m-fg: #fff; /* male foreground */
+    --sex-f-bg: #000; /* female background */
+    --sex-f-fg: #fff; /* female foreground */
+    --sex-u-bg: #000; /* unknown background */
+    --sex-u-fg: #fff; /* unknown foreground */
+    --sex-x-bg: #000; /* other/undefined background */
+    --sex-x-fg: #fff; /* other/undefined foreground */
+
+    --dt-html-background: #111;
+    --bs-accordion-bg: #111;
+    --bs-nav-tabs-link-active-bg: #222;
+    --bs-pagination-bg: #111;
+    --bs-pagination-color: #eee;
+    --bs-pagination-hover-color: #fff;
+    --bs-pagination-hover-bg: #222;
+    --bs-pagination-hover-border-color: #333;
+    --bs-pagination-focus-color: #fff;
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #3498db;
+    --bs-pagination-active-border-color: #3498db;
+    --bs-pagination-disabled-color: #666;
+    --bs-pagination-disabled-bg: #111;
+}
+
+/* 25. Additional form controls and Tom Select elements */
+body.wt-global .form-check-input .ts-control,
+body.wt-global .ts-control input,
+body.wt-global .ts-dropdown .wt-global .btn-primary {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .ts-dropdown .wt-global .btn-primary {
+    background-color: #3498db !important;
+    color: #fff !important;
+}
+
+/* 24. Image thumbnails */
+[dir] .img-thumbnail {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+}
+
+/* 25. Additional form controls and Tom Select elements */
+body.wt-global .form-check-input .ts-control,
+body.wt-global .ts-control input,
+body.wt-global .ts-dropdown .wt-global .btn-primary {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .ts-dropdown .wt-global .btn-primary {
+    background-color: #3498db !important;
+    color: #fff !important;
+}
+
+/* 26. Bootstrap accordions */
+body.wt-global .accordion,
+body.wt-global .accordion-item {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+body.wt-global .accordion-header,
+body.wt-global .accordion-button {
+    background-color: #222 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .accordion-body {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+
+/* 27. Bootstrap nav tabs */
+body.wt-global .nav-tabs {
+    border-bottom: 1px solid #333 !important;
+}
+body.wt-global .nav-tabs .nav-link {
+    background-color: #111 !important;
+    color: #3498db !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .nav-tabs .nav-link.active {
+    background-color: #222 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    border-bottom-color: transparent !important;
+    pointer-events: auto !important;
+}
+
+/* 28. Form controls */
+[dir] .form-control {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+[dir] .form-control:focus {
+    background-color: #111 !important;
+    color: #eee !important;
+    border-color: #3498db !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25) !important;
+}
+
+/* 30. Bootstrap pagination */
+body.wt-global .pagination {
+    background-color: #111 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .page-link {
+    background-color: var(--bs-pagination-bg) !important;
+    color: var(--bs-pagination-color) !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+body.wt-global .page-link:hover {
+    background-color: var(--bs-pagination-hover-bg) !important;
+    color: var(--bs-pagination-hover-color) !important;
+    border-color: var(--bs-pagination-hover-border-color) !important;
+}
+body.wt-global .page-link:focus {
+    background-color: var(--bs-pagination-hover-bg) !important;
+    color: var(--bs-pagination-focus-color) !important;
+    border-color: #3498db !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25) !important;
+}
+body.wt-global .page-item.active .page-link {
+    background-color: #3498db !important;
+    color: #fff !important;
+    border-color: #3498db !important;
+    pointer-events: auto !important;
+}
+body.wt-global .page-item.disabled .page-link {
+    background-color: #111 !important;
+    color: #666 !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+
+/* 31. General button styling */
+[dir] .btn {
+    background-color: #333 !important;
+    color: #eee !important;
+    border: 1px solid #444 !important;
+    pointer-events: auto !important;
+}
+[dir] .btn:hover {
+    background-color: #444 !important;
+    color: #fff !important;
+}
+
+/* 29. Form select controls */
+[dir] .form-select {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+[dir] .form-select:focus {
+    background-color: #111 !important;
+    color: #eee !important;
+    border-color: #3498db !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25) !important;
+}
+
+/* 32. Form control placeholders */
+[dir] .form-control::placeholder,
+body.wt-global .form-control.wt-header-search-field::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+}
+[dir] .form-select::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+}
+
+/* 33. Search input styling */
+body.wt-global [type="search"] {
+    -webkit-appearance: none !important;
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    border-radius: 4px !important;
+    pointer-events: auto !important;
+}
+body.wt-global [type="search"]:focus {
+    background-color: #111 !important;
+    color: #eee !important;
+    border-color: #3498db !important;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25) !important;
+}
+body.wt-global [type="search"]::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+}
+
+/* 34. Input group text styling */
+[dir] .input-group-text {
+    background-color: #222 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
+}
+
+/* 35. Form check input styling */
+[dir] .form-check-input {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #eee !important;
+    pointer-events: auto !important;
+}
+[dir] .form-check-input:checked {
+    background-color: #3498db !important;
+    border-color: #3498db !important;
+    color: #fff !important;
+}
+
+/* 36. TV output styling */
+[dir] .tv_out {
+    background-color: #111 !important;
+    color: #eee !important;
+    border: 1px solid #333 !important;
+    pointer-events: auto !important;
 }
