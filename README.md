@@ -15,7 +15,7 @@ MinimalBlack is an OLED-friendly blacked-out interface with complementary greys 
 ## Demo
 
 A live demo is available here:  
-[Minimal Black Demo](https://timur.khanate.systems/)
+[timur.khanate.systems](https://timur.khanate.systems/)
 - Tested on 2.1.25
 
 ---
