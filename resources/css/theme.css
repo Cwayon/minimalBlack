@@ -770,3 +770,27 @@ body.wt-global .form-text {
     /* Other styles */
     color: #bbb; /* Dark gray text */
 }
+body.wt-global .page-link {
+    background-color: #222 !important;
+    color: #3498db !important;
+}
+
+body.wt-global .page-link:hover {
+    background-color: #111 !important;
+    color: #5dade2 var(--bs-pagination-focus-color) !important;
+}
+
+body.wt-global .page-link:active {
+    background-color: #333 !important;
+}
+body.wt-global .pagination {
+    background-color: #000 !important;
+}
+body.wt-global .page-link:hover {
+    color: #3498db var(--bs-pagination-focus-color) !important;
+}
+[dir] #cboxContent,
+[dir] #cboxTitle,
+[dir] #cboxOverlay {
+    background-color: #000 !important;
+}
