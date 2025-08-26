@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Example theme.
+ * Minimal Black Theme loader
  */
 
 declare(strict_types=1);
 
-namespace ExampleNamespace;
+namespace MinimalBlack;
 
-require __DIR__ . '/ExampleModuleTheme.php';
+require __DIR__ . "/MinimalBlackTheme.php";
 
-return new ExampleModuleTheme();
+return new MinimalBlackTheme();
